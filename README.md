@@ -24,9 +24,9 @@ In contrast, this work considers **non-Boolean functions**, where the oracle enc
 
 Instead of estimating the fraction of marked states, the algorithm estimates the mean value
 
-\[
+$$
 \mu=\frac1N\sum_x f(x),
-\]
+$$
 
 using quantum phase estimation on a specially constructed amplitude amplification operator.
 
