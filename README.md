@@ -124,9 +124,7 @@ Q_{\text{iter}}
 |\eta_\pm\rangle = e^{\pm i\theta} |\eta_\pm\rangle.
 $$
 
-Applying QPE estimates the eigenphase $\hat{\theta}$,
-
-from which the mean value is recovered.
+Applying QPE estimates the eigenphase $\hat{\theta}$, from which the mean value is recovered.
 
 The implementation includes
 
@@ -139,13 +137,7 @@ The implementation includes
 
 # Mean Estimation
 
-After estimating
-
-[
-\hat{\theta},
-]
-
-the mean is computed as
+After estimating $\hat{\theta}$, the mean is computed as
 
 ```python
 np.cos(theta_hat)
@@ -153,26 +145,13 @@ np.cos(theta_hat)
 
 which estimates
 
-[
-\frac1{256}
-\sum_{k=0}^{255}
-\cos\left(
-\frac{\pi}{2}
-\cdot
-\frac{k}{255}
-\right).
-]
+$$
+\frac{1}{256} \sum_{k=0}^{255} \cos\left( \frac{\pi}{2} \cdot \frac{k}{255} \right). 
+$$
 
 ---
 
 # Project Structure
-
-```
-.
-├── NBQAA.ipynb
-├── README.md
-└── figures/
-```
 
 The notebook includes
 
@@ -183,33 +162,6 @@ The notebook includes
 5. Probability distribution visualization
 6. Quantum Phase Estimation
 7. Mean estimation
-
----
-
-# Requirements
-
-* Python 3.10+
-* Qiskit
-* NumPy
-* Matplotlib
-
-Install dependencies with
-
-```bash
-pip install qiskit numpy matplotlib
-```
-
----
-
-# Example Output
-
-The notebook produces
-
-* Circuit diagrams for each operator
-* Probability distributions after multiple amplification iterations
-* QPE output distribution
-* Estimated phase
-* Estimated mean value
 
 ---
 
