@@ -43,7 +43,7 @@ n = 8
 the oracle applies a phase rotation to each qubit
 
 $$
-U_f : |x> \mapsto e^{i \frac{2 \pi}{4} \cdot \frac{x}{255} } |x>
+U_f : |x \rangle \mapsto e^{i \frac{2 \pi}{4} \cdot \frac{x}{255} } |x \rangle
 $$
 
 This oracle encodes the function $f(x) = \frac{x}{4 \cdot 255}$ into the global quantum phase.
@@ -74,7 +74,7 @@ The project constructs a controlled version of the oracle, $CU_f$,
 which conditionally applies
 
 * $U_f$
-* $U_f^\dag$
+* $U_f^\dagger$
 
 depending on the ancilla state.
 
@@ -112,30 +112,18 @@ The plots illustrate how the quantum state evolves under repeated amplitude ampl
 The notebook then performs Quantum Phase Estimation (QPE).
 
 The initial state satisfies
-
-[
-|\Psi_0\rangle
-==============
-
-\frac{|\eta_+\rangle+|\eta_-\rangle}{\sqrt2},
-]
+$$
+|\Psi_0\rangle = \frac{|\eta_+\rangle+|\eta_-\rangle}{\sqrt2},
+$$
 
 where
 
-[
+$$
 Q_{\text{iter}}
-|\eta_\pm\rangle
-================
+|\eta_\pm\rangle = e^{\pm i\theta} |\eta_\pm\rangle.
+$$
 
-e^{\pm i\theta}
-|\eta_\pm\rangle.
-]
-
-Applying QPE estimates the eigenphase
-
-[
-\hat{\theta},
-]
+Applying QPE estimates the eigenphase $\hat{\theta}$,
 
 from which the mean value is recovered.
 
