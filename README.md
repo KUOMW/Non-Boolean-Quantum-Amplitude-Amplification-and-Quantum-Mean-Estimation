@@ -73,8 +73,8 @@ The project constructs a controlled version of the oracle, $CU_f$,
 
 which conditionally applies
 
-* (U_f)
-* (U_f^\dag)
+* $U_f$
+* $U_f^\dag$
 
 depending on the ancilla state.
 
@@ -92,11 +92,7 @@ CU_f \circ
 S_{\Psi_0}.
 $$
 
-Starting from
-
-$
-|\Psi_0\rangle
-$,
+Starting from $|\Psi_0\rangle$,
 
 the notebook applies
 
