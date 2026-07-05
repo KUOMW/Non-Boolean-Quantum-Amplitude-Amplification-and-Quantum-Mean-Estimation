@@ -112,6 +112,7 @@ The plots illustrate how the quantum state evolves under repeated amplitude ampl
 The notebook then performs Quantum Phase Estimation (QPE).
 
 The initial state satisfies
+
 $$
 |\Psi_0\rangle = \frac{|\eta_+\rangle+|\eta_-\rangle}{\sqrt2},
 $$
