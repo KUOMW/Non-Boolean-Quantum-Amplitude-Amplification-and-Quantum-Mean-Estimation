@@ -42,28 +42,11 @@ n = 8
 
 the oracle applies a phase rotation to each qubit
 
-[
-U_f
-===
+$$
+U_f : |x> \mapsto e^{i \frac{2 \pi}{4} \cdot \frac{x}{255} } |x>
+$$
 
-\prod_{k=0}^{n-1}
-P!\left(
-\frac{\pi}{4}
-\cdot
-\frac{2^k}{255}
-\right),
-]
-
-where `P(θ)` is the single-qubit phase gate.
-
-In the implementation,
-
-```python
-theta = (np.pi/4) * (2**k) / 255
-qc.p(theta, q_reg[k])
-```
-
-This oracle encodes the function values into the global quantum phase.
+This oracle encodes the function $f(x) = \frac{x}{255}$ into the global quantum phase.
 
 ---
 
