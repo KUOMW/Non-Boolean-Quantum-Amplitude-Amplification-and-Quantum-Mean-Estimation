@@ -46,17 +46,13 @@ $$
 U_f : |x> \mapsto e^{i \frac{2 \pi}{4} \cdot \frac{x}{255} } |x>
 $$
 
-This oracle encodes the function $f(x) = \frac{x}{255}$ into the global quantum phase.
+This oracle encodes the function $f(x) = \frac{x}{4 \cdot 255}$ into the global quantum phase.
 
 ---
 
 # Selective Phase-Flip Operator
 
-The circuit constructs
-
-[
-S_{\Psi_0},
-]
+The circuit constructs $S_{\Psi_0}$,
 
 which performs a reflection about the initial state.
 
@@ -73,16 +69,12 @@ This operator plays the same role as Grover's diffusion operator in standard amp
 
 # Conditional Oracle
 
-The project constructs a controlled version of the oracle,
-
-[
-CU_f,
-]
+The project constructs a controlled version of the oracle, $CU_f$, 
 
 which conditionally applies
 
 * (U_f)
-* (U_f^\dagger)
+* (U_f^\dag)
 
 depending on the ancilla state.
 
@@ -94,19 +86,17 @@ This is required for constructing the amplification operator.
 
 The amplification operator is
 
-[
-Q_{\text{iter}}
-===============
-
-CU_f
+$$
+Q_{\text{iter}} \coloneqq 
+CU_f \circ
 S_{\Psi_0}.
-]
+$$
 
 Starting from
 
-[
-|\Psi_0\rangle,
-]
+$
+|\Psi_0\rangle
+$,
 
 the notebook applies
 
